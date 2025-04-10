@@ -11,7 +11,7 @@
 
 Se trata de un proyecto experimental sobre cómo crear modelos de lenguaje con embeddings, en el marco de la asignatura DGSI de la FIB UPC.
 
-DGSI-FIB-ChatBot es una aplicación de chatbot diseñada específicamente para la Facultad de Informática de Barcelona (FIB). El proyecto proporciona una interfaz interactiva que permite a los usuarios realizar consultas y obtener respuestas automáticas relacionadas con información de la facultad.
+**DGSI-FIB-ChatBot** es una aplicación de chatbot diseñada específicamente para la Facultad de Informática de Barcelona (FIB). El proyecto proporciona una interfaz interactiva que permite a los usuarios realizar consultas y obtener respuestas automáticas relacionadas con información de la facultad.
 
 ## Características Principales
 
@@ -166,7 +166,7 @@ Profesor del Departamento de Ingeniería de Servicios y Sistemas de Información
 ### Contexto Académico
 Este proyecto se ha desarrollado en el marco de la asignatura **Desarrollo y Gestión de Sistemas Inteligentes (DGSI)** del Máster en Ingeniería Informática de la [Facultad de Informática de Barcelona (FIB)](https://www.fib.upc.edu/) de la [Universitat Politècnica de Catalunya (UPC)](https://www.upc.edu/).
 
-**Curso académico:** 2024/2025 - Segundo cuatrimestreK
+**Curso académico:** 2024/2025 - Segundo cuatrimestre
 
 ## Licencia
 
