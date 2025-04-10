@@ -1,0 +1,56 @@
+﻿# Archivos y directorios a ignorar en el contexto de construcción Docker
+
+# Archivos generados y caché
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+.env
+
+# Archivos de base de datos SQLite
+*.db
+data/
+
+# Archivos de configuración IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Archivos de Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Archivos Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# Logs
+logs/
+*.log
+
+# Archivos temporales
+.DS_Store
+.cache

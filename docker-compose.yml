@@ -1,0 +1,10 @@
+﻿services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chatbot-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
