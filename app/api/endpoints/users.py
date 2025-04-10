@@ -10,7 +10,7 @@ from app.core.security import get_password_hash, create_access_token
 from app.db.database import get_db
 from app.services.auth_service import authenticate_user, get_current_user
 from app.db.models import User
-from schemas import UserResponse, Token, UserCreate
+from app.core.schemas import UserResponse, Token, UserCreate
 
 router = APIRouter()
 

@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from app.db.database import get_db
 from app.services.auth_service import get_current_user
 from app.db.models import User, Conversation
-from schemas import ConversationListResponse, ConversationResponse, ConversationCreate, ConversationUpdate
+from app.core.schemas import ConversationListResponse, ConversationResponse, ConversationCreate, ConversationUpdate
 
 router = APIRouter()
 

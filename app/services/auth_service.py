@@ -8,7 +8,7 @@ from app.core.config import settings
 from app.core.security import verify_password
 from app.db.database import get_db
 from app.db.models import User
-from schemas import TokenData
+from app.core.schemas import TokenData
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f"{settings.API_V1_STR}/login/access-token")
 

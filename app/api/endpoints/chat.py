@@ -6,7 +6,7 @@ from app.db.database import get_db
 from app.services.auth_service import get_current_user
 from app.services.chat_service import process_message
 from app.db.models import User
-from schemas import ChatResponse, ChatRequest
+from app.core.schemas import ChatResponse, ChatRequest
 
 router = APIRouter()
 

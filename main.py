@@ -6,6 +6,7 @@ from fastapi.staticfiles import StaticFiles
 
 from app.api import api_router
 from app.core.config import settings
+from app.db.database import Base, engine
 
 # Inicializar la aplicación FastAPI
 app = FastAPI(
@@ -25,6 +26,7 @@ app.add_middleware(
 
 app.include_router(api_router, prefix=settings.API_V1_STR)
 
+Base.metadata.create_all(bind=engine)
 
 # Montar archivos estáticos
 app.mount("/static", StaticFiles(directory="static"), name="static")

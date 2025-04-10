@@ -21,7 +21,7 @@ class UserResponse(BaseModel):
     email: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class Token(BaseModel):
@@ -45,7 +45,7 @@ class MessageResponse(BaseModel):
     timestamp: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class ConversationCreate(BaseModel):
@@ -64,7 +64,7 @@ class ConversationResponse(BaseModel):
     messages: List[MessageResponse] = []
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class ConversationListResponse(BaseModel):
@@ -74,7 +74,7 @@ class ConversationListResponse(BaseModel):
     updated_at: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class ChatRequest(BaseModel):
