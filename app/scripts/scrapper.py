@@ -5,12 +5,14 @@ import os
 import html2text
 from concurrent.futures import ThreadPoolExecutor
 
-start_url = "https://www.fib.upc.edu/"
+start_url = "https://www.fib.upc.edu/en/"
 visited_urls = set()
 output_folder = "downloaded_pages"
 markdown_folder = "markdown_pages"
+pdf_folder = "pdf_pages"
 os.makedirs(output_folder, exist_ok=True)
 os.makedirs(markdown_folder, exist_ok=True)
+os.makedirs(pdf_folder, exist_ok=True)
 
 def save_page(url, content):
     if not url.startswith(start_url):
@@ -51,19 +53,49 @@ def save_page(url, content):
         f.write(markdown_content)
     print(f"Saved Markdown: {md_filepath}")
 
-def fetch_and_save(url):
+def save_pdf(url):
     try:
         response = requests.get(url, timeout=5)
         response.raise_for_status()
-        save_page(url, response.text)
+        
+        parsed_url = urlparse(url)
+        filename = os.path.basename(parsed_url.path)
+        if not filename.lower().endswith('.pdf'):
+            filename += '.pdf'
+        
+        pdf_filepath = os.path.join(pdf_folder, filename)
+        os.makedirs(os.path.dirname(pdf_filepath), exist_ok=True)
+        
+        with open(pdf_filepath, 'wb') as f:
+            f.write(response.content)
+        print(f"Saved PDF: {pdf_filepath}")
+        return True
     except requests.RequestException as e:
-        print(f"Failed to fetch {url}: {e}")
+        print(f"Failed to download PDF {url}: {e}")
+        return False
+
+def fetch_and_save(url):
+    # Check if URL points to a PDF
+    if url.lower().endswith('.pdf'):
+        save_pdf(url)
+    else:
+        try:
+            response = requests.get(url, timeout=5)
+            response.raise_for_status()
+            save_page(url, response.text)
+        except requests.RequestException as e:
+            print(f"Failed to fetch {url}: {e}")
 
 def crawl(url):
     if url in visited_urls or not url.startswith(start_url):
         return
     print(f"Crawling: {url}")
     visited_urls.add(url)
+
+    # Check if URL is a PDF
+    if url.lower().endswith('.pdf'):
+        save_pdf(url)
+        return
 
     try:
         response = requests.get(url, timeout=5)
