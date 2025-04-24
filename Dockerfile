@@ -15,6 +15,11 @@ COPY . .
 # Crear directorio para la base de datos SQLite (si se usa SQLite)
 RUN mkdir -p /app/data
 
+# Añade esto a tu Dockerfile si no está ya
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 # Exponer el puerto en el que corre la aplicación
 EXPOSE 8000
 
