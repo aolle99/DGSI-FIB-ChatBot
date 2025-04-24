@@ -75,7 +75,7 @@
       retries: 3
 
   llm-service:
-    image: ghcr.io/huggingface/text-embeddings-inference:latest
+    image: ghcr.io/huggingface/text-embeddings-inference:cpu-latest
     container_name: llm-embeddings
     restart: unless-stopped
     ports:
@@ -87,16 +87,16 @@
       - REVISION=main
       - MAX_BATCH_TOKENS=16384
       - MAX_INPUT_LENGTH=512
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 4G
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+#    deploy:
+#      resources:
+#        limits:
+#          cpus: '2'
+#          memory: 4G
+#        reservations:
+#          devices:
+#            - driver: nvidia
+#              count: 1
+#              capabilities: [gpu]
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:80/health"]
       interval: 30s
