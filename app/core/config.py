@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     SECRET_KEY: str = os.getenv("SECRET_KEY", "tu_clave_secreta_aqui_cambiame_en_produccion")
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@postgres:5432/chatbot")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/chatbot")
     PROJECT_NAME: str = "Chatbot"
     VERSION: str = "0.0.1"
     PROJECT_DESCRIPTION: str = "API para el chatbot de la FIB"
