@@ -7,9 +7,9 @@ from concurrent.futures import ThreadPoolExecutor
 
 start_url = "https://www.fib.upc.edu/en/"
 visited_urls = set()
-output_folder = "downloaded_pages"
-markdown_folder = "markdown_pages"
-pdf_folder = "pdf_pages"
+output_folder = "./downloaded_pages"
+markdown_folder = "./markdown_pages"
+pdf_folder = "./pdf_pages"
 os.makedirs(output_folder, exist_ok=True)
 os.makedirs(markdown_folder, exist_ok=True)
 os.makedirs(pdf_folder, exist_ok=True)
