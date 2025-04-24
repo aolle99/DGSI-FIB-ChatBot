@@ -1,0 +1,9 @@
+.idea/*
+LLM/downloaded_pages/*
+LLM/markdown_pages/*
+.venv/*
+LLM/pdf_pages/*
+LLM/pdfoutput/*
+LLM/chroma_db/*
+LLM/models/.cache/*
+LLM/models/model/*
